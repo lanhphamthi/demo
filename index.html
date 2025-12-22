@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculator</title>
+</head>
+<body>
+  <h2>Simple Calculator</h2>
+
+  <input id="a" type="number" placeholder="Số a">
+  <input id="b" type="number" placeholder="Số b">
+  <button onclick="calculate()">Cộng</button>
+
+  <p>Kết quả: <span id="result">0</span></p>
+
+  <script type="module">
+    import { add } from './src/sum.js';
+
+    function calculate() {
+      const a = Number(document.getElementById('a').value);
+      const b = Number(document.getElementById('b').value);
+
+      const result = add(a, b);
+      document.getElementById('result').textContent = result;
+    }
+
+  </script>
+</body>
+</html>
